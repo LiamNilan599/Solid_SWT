@@ -1,6 +1,8 @@
 package ie.gmit.open;
 
-public class Subscriber
+import java.util.List;
+
+public abstract class Subscriber
 {
     protected Long subscriberId;
 
@@ -9,6 +11,8 @@ public class Subscriber
     protected Long phoneNumber;
 
     protected int baseRate;
+
+    public abstract double calculateBill();
 
     /**
      * @return the subscriberId
