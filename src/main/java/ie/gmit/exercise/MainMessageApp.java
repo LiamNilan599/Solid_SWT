@@ -8,18 +8,28 @@ public class MainMessageApp {
 	{
 		Formatter formatterJ = new JSONFormatter();//creates formatter
 		TextFormatter formatterT = new TextFormatter();
+		MessagePrinter printer = new MessagePrinter();
 
 		Message msg = new Message("This is a message");
-		boolean choice = false;
-		if (choice == false)
+		int choice = 3;
+		if (choice == 0)
 		{
-			MessagePrinter printer = new MessagePrinter();
+
 			printer.writeMessage(msg, "test_msg.txt" , formatterT);
 		}
-		else
+		else if (choice == 1)
 		{
-			MessagePrinter printer = new MessagePrinter();
 			printer.writeMessage(msg, "test_msg.txt", formatterJ);
+		}
+		else if (choice == 2)
+		{
+			String text = formatterT.format(msg);
+			System.out.println(text);
+		}
+		else if (choice == 3)
+		{
+			String json = formatterJ.format(msg);
+			System.out.println(json);
 		}
 	}
 }
